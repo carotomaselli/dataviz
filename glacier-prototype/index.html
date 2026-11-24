@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Schweizer Gletscher schmelzen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <section class="stage" aria-label="Gletscher als Eiszapfen">
+        <svg
+          id="chart"
+          role="img"
+          aria-label="Eiszapfen stehen für Gletscher, das Wasser unten für das geschmolzene Eisvolumen"
+        ></svg>
+        <div id="tip" class="tip" hidden></div>
+
+        <div class="timeline">
+          <button
+            id="play"
+            class="play"
+            type="button"
+            aria-label="Zeitraffer abspielen"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path id="playIcon" d="M8 5v14l11-7z" />
+            </svg>
+          </button>
+          <div class="track">
+            <output id="yearBubble" for="year">2000</output>
+            <input
+              id="year"
+              type="range"
+              min="2000"
+              max="2100"
+              step="1"
+              value="2000"
+              aria-label="Jahr"
+            />
+            <span class="end start">2000</span>
+            <span class="end finish">2100</span>
+            <span id="obsMark" class="obs-mark">Messungen bis 2025</span>
+          </div>
+        </div>
+      </section>
+
+      <aside id="panel" class="panel" aria-live="polite"></aside>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+    <script src="data/data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
